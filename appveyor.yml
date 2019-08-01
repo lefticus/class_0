@@ -7,8 +7,6 @@ build_script:
     
     cd build
 
-    curl -s https://report.ci/annotate.py > annotate.py
-    
     pip install --user conan
 
     set PATH=%PATH%;C:\Users\appveyor\AppData\Roaming\Python\Scripts
@@ -17,9 +15,7 @@ build_script:
 
     cmake c:\projects\source -G "Visual Studio 15 2017 Win64" -DCMAKE_BUILD_TYPE:STRING=Release
 
-    cmake --build . --config "Release" | python annotate.py --name "MSVC Build" --tool msvc --tee
+    cmake --build . --config "Release"
 test_script:
 - cmd: ctest -C Release
 
-on_finish:
-  - python < $(curl https://report.ci/upload.py)
