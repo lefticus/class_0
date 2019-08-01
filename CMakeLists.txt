@@ -1,6 +1,6 @@
 project(TestForClass)
 
-cmake_minimum_required(VERSION 3.15)
+cmake_minimum_required(VERSION 3.13)
 
 add_executable(sum_number src/sum_number.cpp)
 target_compile_features(sum_number PRIVATE cxx_std_17)
