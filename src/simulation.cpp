@@ -1,14 +1,22 @@
 #include <vector>
-#include <simulation.hpp>
 #include <algorithm>
 
-int main(const int argc, const char *[]) {
-  const auto advance_time_step = [](auto &particle) {
-    particle.timestep(Seconds{0.1});
+#include <simulation/simulation.hpp>
+
+World::World(const std::string &file_location)
+{
+  // do things
+}
+
+void World::timestep(const Seconds &time)
+{
+  const auto advance_time_step = [time](auto &particle) {
+    particle.timestep(time);
   };
 
-  std::vector<Particle> world;
   for (int i = 0; i < 10000; ++i) {
-    std::for_each(begin(world), end(world), advance_time_step);
+    std::for_each(begin(particles), end(particles), advance_time_step);
   }
 }
+
+

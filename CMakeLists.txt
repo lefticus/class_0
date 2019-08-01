@@ -14,7 +14,7 @@ add_executable(test_harness test/test.cpp)
 target_compile_features(test_harness PRIVATE cxx_std_11)
 target_link_libraries(test_harness math_functions)
 
-add_executable(simulation src/simulation.cpp)
+add_executable(simulation src/simulation.cpp src/simulation_main.cpp)
 target_compile_features(simulation PRIVATE cxx_std_14)
 target_include_directories(simulation PUBLIC include)
 
