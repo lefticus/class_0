@@ -3,7 +3,7 @@ project(TestForClass)
 cmake_minimum_required(VERSION 3.13)
 
 add_executable(sum_number src/sum_number.cpp)
-target_compile_features(sum_number PRIVATE cxx_std_17)
+target_compile_features(sum_number PRIVATE cxx_std_11)
 
 add_library(math_functions src/factorial.cpp)
 target_compile_features(math_functions PRIVATE cxx_std_11)
